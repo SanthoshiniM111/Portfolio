@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: #111;
+}
+
+.container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.project-card {
+  background-color: #eee;
+  border-radius: 12px;
+  padding: 25px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* Hover content starts hidden */
+.project-card p,
+.project-card .project-btn {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  overflow: hidden;
+}
+
+/* Reveal content on hover */
+.project-card:hover p,
+.project-card:hover .project-btn {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* Make the paragraph look clean */
+.project-card p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Project Button */
+.project-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: teal;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #006d6d;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  gap: 80px;
+  z-index: 10;
+  flex-wrap: wrap;
+  background: white;
+  padding: 10px 0;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  transition: color 0.3s;
+  padding-left: 80px;
+}
+
+nav a:hover {
+  color: teal;
+}
+
+@media screen and (max-width: 768px) {
+  .project-container {
+    justify-content: center;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 60px;
+  }
+
+  nav a {
+    padding-left: 0;
+    font-size: 20px;
+  }
+}

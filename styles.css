@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: white;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #111;
+  color: #eee;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Hero Layout */
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px;
+  height: calc(100vh - 80px);
+}
+
+.left-section {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.top-heading {
+  align-self: flex-start;
+  font-size: 24px;
+}
+
+.intro-center p {
+  line-height: 2;
+  font-size: 25px;
+  text-align: justify;
+  max-width: 90%;
+  padding-left: 300px;
+  padding-right: 100px;
+  padding-top: 100px;
+}
+
+.nav-button {
+  display: flex;
+  justify-content: left;
+  gap: 150px;
+  margin-bottom: 10px;
+  padding-top: 120px;
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+.nav-button a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+  position: relative;
+}
+
+.nav-button a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: teal;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.nav-button a:hover::after {
+  width: 100%;
+}
+
+.right-section img {
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  padding-right: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #999;
+}
+
+.tagline {
+  font-style: italic;
+  color: gray;
+  margin: 10px 0 20px;
+}
+
+/* Scroll Reveal Effect */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .right-section img {
+    margin: 20px auto 0;
+  }
+}
+
+:root {
+  --bg-light: #ffffff;
+  --text-light: #c8008f;
+
+  --bg-dark: #1a001f;
+  --text-dark: #ffffff;
+
+  --accent-color: #ff00ff;
+  --hover-color: #ff66cc;
+
+  --footer-bg: #c8008f;
+  --footer-text: #ffffff;
+}
+
+/* Default Light Theme */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+a, h1, h2, h3, p {
+  color: var(--text-light);
+}
+
+.nav-button a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-button a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+.nav-button a:hover::after {
+  width: 100%;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Optional dark theme toggle class */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode a,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+  color: var(--text-dark);
+}
+
+body.dark-mode .nav-button a {
+  color: var(--text-dark);
+}
+
+body.dark-mode button {
+  background-color: var(--hover-color);
+  color: #000;
+}
+
+/* Footer Navigation */
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--footer-bg);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.footer-nav a {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--hover-color);
+}

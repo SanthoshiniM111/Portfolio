@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Santhoshini Madda</title>
+  <link rel="stylesheet" href="about.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p.description {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-card {
+      background-color: #f4f4f4;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .contact-card a {
+      text-decoration: none;
+      color: teal;
+      font-weight: bold;
+      word-break: break-all;
+    }
+
+    body.dark .contact-card {
+      background-color: #222;
+      color: #eee;
+    }
+
+    body.dark .contact-card a {
+      color: #0ff;
+    }
+
+    /* Nav button */
+    .nav-button {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .nav-button a {
+      margin: 0 20px;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    .nav-button a:hover {
+      color: teal;
+    }
+
+    body.dark .nav-button a {
+      color: white;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav-button a {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+  <div class="contact-container">
+    <h1>Contact Me</h1>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <a href="mailto:santhoshinim111@gmail.com">santhoshinim111@gmail.com</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/santhoshini-madda/" target="_blank">linkedin.com/in/santhoshini-madda</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>GitHub</h3>
+        <a href="https://github.com/SanthoshiniM111" target="_blank">github.com/SanthoshiniM111</a>
+      </div>
+    </div>
+
+    <div class="nav-button">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+  </div>
+  
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("DOMContentLoaded", revealOnScroll);
+  </script>
+</body>
+</html>

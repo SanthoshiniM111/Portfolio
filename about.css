@@ -1,0 +1,350 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: white;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Theme Colors */
+:root {
+  --bg-light: #ffffff;
+  --text-light: #c8008f;
+  --bg-dark: #1a001f;
+  --text-dark: #ffffff;
+  --accent-color: #ff00ff;
+  --hover-color: #ff66cc;
+}
+
+/* Light Mode Defaults */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+a, h1, h2, h3, p {
+  color: var(--text-light);
+}
+
+.nav-button a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-button a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+.nav-button a:hover::after {
+  width: 100%;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Optional dark theme toggle class */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode a,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+  color: var(--text-dark);
+}
+
+body.dark-mode .nav-button a {
+  color: var(--text-dark);
+}
+
+body.dark-mode button {
+  background-color: var(--hover-color);
+  color: #000;
+}
+
+/* Footer Navigation */
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--footer-bg);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.footer-nav a {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--hover-color);
+}
+
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode a,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+  color: var(--text-dark);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Hero Layout */
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  min-height: calc(100vh - 80px);
+  gap: 60px;
+}
+
+/* Left Section */
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+
+.top-heading {
+  font-size: 24px;
+  padding-bottom: 70px;
+}
+
+.tagline {
+  font-style: italic;
+  color: gray;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* Intro Paragraph */
+.intro-center p {
+  line-height: 1.8;
+  font-size: 25px;
+  text-align: justify;
+  max-width: 150%;
+}
+
+/* Right Section */
+.right-section {
+  flex: 1;
+  text-align: center;
+}
+
+.right-section img {
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #999;
+}
+
+/* Navigation Buttons (original in hero) */
+.nav-button {
+  display: flex;
+  margin-bottom: 30px;
+  padding-top: 250px;
+  font-size: 25px;
+  gap: 100px;
+}
+
+.nav-button a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  position: relative;
+  color: var(--text-light);
+  transition: color 0.3s;
+}
+
+.nav-button a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+.nav-button a:hover::after {
+  width: 100%;
+}
+
+body.dark-mode .nav-button a {
+  color: var(--text-dark);
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+body.dark-mode button {
+  background-color: var(--hover-color);
+  color: #000;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer Navigation */
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-light);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 2px solid var(--accent-color);
+  z-index: 20;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-light);
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: var(--hover-color);
+}
+
+/* Dark mode footer nav */
+body.dark-mode .footer-nav {
+  background-color: var(--bg-dark);
+  border-top: 2px solid var(--hover-color);
+}
+
+body.dark-mode .footer-nav a {
+  color: var(--text-dark);
+}
+
+body.dark-mode .footer-nav a:hover {
+  color: var(--hover-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .nav-button {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+  }
+
+  .intro-center p {
+    padding: 10px;
+  }
+
+  .right-section img {
+    margin-top: 10px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+

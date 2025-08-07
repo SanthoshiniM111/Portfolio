@@ -1,0 +1,50 @@
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.contact-details a {
+  color: teal;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+.nav-button {
+  display: flex;
+  justify-content: left;
+  gap: 150px;
+  margin-bottom: 10px;
+  padding-top: 120px;
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+.nav-button a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+  position: relative;
+}
+
+.nav-button a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: teal;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.nav-button a:hover::after {
+  width: 100%;
+}

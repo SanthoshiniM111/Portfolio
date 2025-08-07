@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Santhoshini Madda</title>
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+  <!-- Optional particles background -->
+  <div id="particles-js"></div>
+
+  <div class="hero">
+    <!-- Left content -->
+    <div class="left-section">
+      <!-- Page Heading -->
+      <div class="top-heading">
+        <h1>About Me</h1>
+      </div>
+
+      <!-- About content -->
+      <div class="intro-center reveal">
+        <p>
+          Hello! I'm <strong>Santhoshini Madda</strong>, a passionate and enthusiastic web developer.
+          My goal is to create interactive and responsive websites that are both functional and visually appealing.
+          I enjoy working with HTML, CSS, JavaScript, and am exploring frameworks like React and Node.js to build full-stack applications.
+        </p>
+      </div>
+
+      <!-- Optional: Navigation buttons in content area -->
+
+    </div>
+
+    <!-- Profile image -->
+    <div class="right-section">
+      <img src="images/profile.jpg" alt="Profile Picture" class="profile-img" />
+    </div>
+  </div>
+
+  <!-- Footer Navigation -->
+  <footer class="site-footer">
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Santhoshini Madda. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("DOMContentLoaded", revealOnScroll);
+  </script>
+</body>
+</html>

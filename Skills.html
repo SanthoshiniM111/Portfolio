@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills - Santhoshini Madda</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .skill-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-height: 150px; /* Reserve enough height */
+  overflow: hidden;
+}
+
+body.dark .skill-card {
+  background-color: #222;
+  color: #eee;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.skill-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Prevent layout shift */
+.skill-dropdown {
+  list-style: none;
+  padding-left: 15px;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* Reveal dropdown smoothly */
+.skill-card:hover .skill-dropdown {
+  max-height: 500px; /* large enough to show all items */
+  opacity: 1;
+}
+
+.skill-dropdown li {
+  padding: 0px 0px;
+  font-size: 16px;
+}
+
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .skills-grid {
+        gap: 20px;
+      }
+
+      .skill-card {
+        padding: 16px;
+      }
+
+      .skill-card h3 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+  <div class="hero">
+    <div class="left-section">
+      <div class="top-heading">
+        <h1>My Skills</h1>
+      </div>
+
+      <div class="intro-center reveal">
+        <p>Hover over each category to see the tools and technologies I use.</p>
+        <div class="skills-grid">
+          <!-- Frontend -->
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <ul class="skill-dropdown">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>React.js</li>
+            </ul>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <ul class="skill-dropdown">
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>REST API</li>
+            </ul>
+          </div>
+
+          <!-- Database -->
+          <div class="skill-card">
+            <h3>Database</h3>
+            <ul class="skill-dropdown">
+              <li>MongoDB</li>
+              <li>MySQL (Basics)</li>
+            </ul>
+          </div>
+
+          <!-- Web Development -->
+          <div class="skill-card">
+            <h3>Web Development</h3>
+            <ul class="skill-dropdown">
+              <li>Responsive Design</li>
+              <li>Debugging</li>
+              <li>Cross-Browser Testing</li>
+            </ul>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-card">
+            <h3>Tools & Platforms</h3>
+            <ul class="skill-dropdown">
+              <li>Git & GitHub</li>
+              <li>VS Code</li>
+              <li>Postman</li>
+              <li>Netlify / Vercel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-button">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Skills.html">Skills</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("DOMContentLoaded", revealOnScroll);
+  </script>
+</body>
+</html>
